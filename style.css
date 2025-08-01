@@ -1,0 +1,583 @@
+body {
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+#video_bg {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+.mainframe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+
+  /* height: 650px;
+    width: 800px; */
+
+  /* height: 812.5px; */
+  height: 700px;
+  width: 1000px;
+}
+
+#header {
+  position: static;
+  width: 100%;
+  height: fit-content;
+  box-sizing: border-box;
+  font-family: "League Spartan ExtraBold", sans-serif;
+
+  /* font-size: 22px; */
+  font-size: 27.5px;
+}
+
+.common-padding {
+  /* padding: 0px 60px; */
+  padding: 0px 75px;
+}
+
+#header-wrapper {
+  border-bottom: solid white;
+  /* padding-top: 30px;
+  padding-bottom: 10px; */
+  padding-top: 37.5px;
+  padding-bottom: 12.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*max-width: 680px;*/
+}
+
+#logo {
+  /* width: 373px;
+    height: 50px; */
+  width: 466.25px;
+  height: 62.5px;
+}
+
+/* ---------------------------------------------- MENU ---------------------------------------------- */
+
+.menu-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Menu Icon */
+#menu {
+  cursor: pointer;
+  filter: brightness(1);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+#menu:hover,
+#menu:active {
+  filter: brightness(1.5);
+  transform: scale(1.1);
+}
+
+#menu img {
+  display: inline-block;
+}
+
+/* ----------------- Dropdown Content ----------------- */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: none;
+  min-width: 150px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  font-family: "League Spartan SemiBold", sans-serif;
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 22px;
+
+}
+
+.dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.menu-wrapper:hover .dropdown {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---------- DROPDOWN PARENT and SUBMENU ---------- */
+
+/* .parent {
+  position: fixed;
+}
+
+.submenu {
+  position: absolute;
+  right: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: none;
+  min-width: 250px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 11;
+  white-space: normal;
+  font-family: "League Spartan Regular", sans-serif;
+} */
+
+/* ---------- Recently Played ---------- */
+
+.recently-played-parent {
+  position: relative;
+}
+
+.recently-played-submenu {
+  position: absolute;
+  right: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: none;
+  min-width: 250px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 11;
+  white-space: normal;
+  font-family: "League Spartan Regular", sans-serif;
+}
+
+.recently-played-parent:hover .recently-played-submenu {
+  display: block;
+}
+
+.recently-played-submenu .recent-item {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.recently-played-submenu .recent-item:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- Choose Song ---------- */
+
+.choose-song-parent {
+  position: relative;
+}
+
+.choose-song-submenu {
+  position: absolute;
+  right: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: none;
+  min-width: 250px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 11;
+  white-space: normal;
+  font-family: "League Spartan Regular", sans-serif;
+}
+
+.choose-song-parent:hover .choose-song-submenu {
+  display: block;
+}
+
+.choose-song-submenu .album-item {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.choose-song-submenu .album-item:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+
+
+.album-item {
+  position: relative;
+}
+
+.song-submenu {
+  position: absolute;
+  right: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: none;
+  min-width: 250px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 11;
+  white-space: normal;
+  font-family: "League Spartan Regular", sans-serif;
+}
+
+.album-item:hover .song-submenu {
+  display: block;
+}
+
+
+/* ---------- Change Background ---------- */
+
+.change-background-parent {
+  position: relative;
+}
+
+.change-background-submenu {
+  position: absolute;
+  right: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: none;
+  min-width: 250px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 11;
+  white-space: normal;
+  font-family: "League Spartan Regular", sans-serif;
+}
+
+.change-background-parent:hover .change-background-submenu {
+  display: block;
+}
+
+.change-background-submenu .bg-item {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.change-background-submenu .bg-item:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+
+/*------- MAINFRAME BODY ------- */
+
+.mainframe-body {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ---------------------------------------------- MAIN CONTENT ---------------------------------------------- */
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  /* width: 630px;
+    height: 353px; */
+  width: 787.5px;
+  height: 441.25px;
+}
+
+.main-content-row-1 {
+  display: flex;
+}
+
+#artwork {
+  box-sizing: border-box;
+}
+
+#cover {
+  /* width: 300px;
+    height: 300px; */
+  width: 375px;
+  height: 375px;
+}
+
+/* ------------------- MUSIC CONTROLS (RIGHT SIDE OF MAIN CONTENT) ------------------- */
+
+.music-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  border-color: white;
+  border-style: solid;
+  box-sizing: border-box;
+  /* width: 330px;
+    height: 300px; */
+  width: 412.5px;
+  height: 375px;
+}
+
+/* --------- CONTROLS ROW 1 --------- */
+/* ---------------------- PLAY SOMETHING ---------------------- */
+
+#random {
+  position: relative;
+  /* width: 170px;
+    height: 70px; */
+  width: 212.5px;
+  height: 87.5px;
+  cursor: pointer;
+}
+
+#random img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+}
+
+#random-hover {
+  opacity: 0;
+}
+
+#random:hover #random-hover {
+  opacity: 1;
+}
+
+#random:hover #random-default {
+  opacity: 0;
+}
+
+/* --------- CONTROLS ROW 2 --------- */
+
+.music-controls-row-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  width: fit-content;
+  font-family: 'League Spartan';
+  font-size: 12px;
+}
+
+/* SLIDER DESIGN  */
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  height: 100%; /* Optional: forces it to match parent height */
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px; 
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  opacity: 0.7;
+  transform: translateY(-0.8px); /* Manual tweaking to center */
+  -webkit-transition: .2s;
+  transition: opacity .2s
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  background: #D56B7E;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* ---------------------- SEEK ---------------------- */
+
+#seek {
+  width: 200px;
+}
+
+#seek:hover {
+  opacity: 1;
+}
+
+#seek:hover::-webkit-slider-thumb {
+  opacity: 1;
+}
+
+/* --------- CONTROLS ROW 3 --------- */
+
+.music-controls-row-3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  width: 185.625px;
+  height: fit-content;
+}
+
+/* PREVIOUS AND NEXT BUTTONS */
+
+.previous-next-button {
+  position: relative;
+  cursor: pointer;
+  /* width: 24px;
+  height: 22px; */
+  width: 30px;
+  height: 27.5px;
+  filter: brightness(1);
+  transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+  will-change: transform, filter;
+}
+
+.previous-next-button img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.previous-next-button:hover,
+.previous-next-button:active {
+  filter: brightness(1.5);
+  transform: scale(1.05);
+}
+
+.previous-next-button.disabled {
+  pointer-events: none;     /* Prevent clicking */
+  opacity: 0.4;             /* Dim it visually */
+  cursor: not-allowed;      /* Optional: show disabled cursor */
+}
+
+/* PLAY AND PAUSE BUTTONS */
+
+#playPauseBtn {
+  position: relative;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+
+#playPauseBtn img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.play-pause-hover {
+  opacity: 0;
+}
+
+.play-pause-button:hover .play-pause-hover {
+  opacity: 1;
+}
+
+.play-pause-button:hover .play-pause-default {
+  opacity: 0;
+}
+
+.play-pause-button.disabled {
+  pointer-events: none;     /* Prevent clicking */
+  opacity: 0.4;             /* Dim it visually */
+  cursor: not-allowed;      /* Optional: show disabled cursor */
+}
+
+
+/* --------- CONTROLS ROW 4 --------- */
+
+.music-controls-row-4 {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  justify-content: space-between;
+}
+
+.volume-icon-container {
+  height: 20px;
+  width: 20px;
+}
+
+#volume {
+  height: 4px;
+}
+
+#volume:hover {
+  opacity: 1;
+}
+
+#volume:hover::-webkit-slider-thumb {
+  opacity: 1;
+}
+
+#volume-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+
+/* --------- SONG TITLE AND ALBUM CONTAINERS --------- */
+
+.title-container {
+  /* max-width: 630px;
+    max-height: 18px; */
+  max-width: 787.5px;
+  max-height: 22.5px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+#title {
+  font-family: "League Spartan ExtraBold";
+  /* font-size: 18px; */
+  font-size: 22.5px;
+  text-transform: uppercase;
+}
+
+
+.album-container {
+  /* max-width: 630px;
+    max-height: 15px; */
+  max-width: 787.5px;
+  max-height: 18.75px;
+}
+
+#album {
+  font-family: "League Spartan";
+  /* font-size: 15px; */
+  font-size: 18.75px;
+}

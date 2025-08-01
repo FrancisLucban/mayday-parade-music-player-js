@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link href="./style.css" rel="stylesheet" />
+    <title id="window-title">Mayday Parade Music Player by Lightsailor</title>
+    <link rel="icon" type="image/x-icon" href="assets/mp-pink-logo.ico">
+  </head>
+
+  <body>
+    <!-- MAIN BACKGROUND -->
+    <div id="div_background">
+      <video autoplay muted loop id="video_bg">
+        <source src="assets/laughing_bg.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- ----------------------------------- MAINFRAME (holds together entire elements of the app) ----------------------------------- -->
+    <div class="mainframe">
+
+      <!-- -------------------------------- HEADER -------------------------------- -->
+      <header id="header", class="common-padding">
+        <div id="header-wrapper">
+          <div id="logo-container">
+            <img src="assets/title.svg" id="logo">
+          </div>
+
+          <!-- DROPDOWN MENU -->
+          <div class="menu-wrapper">
+            <div id="menu">
+              <img src="assets/menu.svg">
+            </div>
+            
+            <div class="dropdown">
+              <!-- Recently Played -->
+              <div class="dropdown-item recently-played-parent">
+                Recently Played
+                <div class="recently-played-submenu"></div>
+              </div>
+
+              <!-- Choose Songs -->
+              <div class="dropdown-item choose-song-parent">
+                Choose Song
+                <div class="choose-song-submenu">
+                  <div class="album-item">
+                    <img src>
+                    Album Title 1
+                    <div class="song-submenu">
+                      <div class="song-item" data-url="">Song Title 1</div>
+                      <div class="song-item" data-url="">Song Title 2</div>
+                      
+                    </div>
+                  </div>
+
+                  <div class="album-item">
+                    <img src>
+                    Album Title 2
+                    <div class="song-submenu">
+                      <div class="song-item" data-url="">Song Title 1</div>
+                      <div class="song-item" data-url="">Song Title 2</div>
+                      
+                    </div>
+                  </div>
+
+                  
+                  <!-- <div class="album-item" style="position: flex;"></div>
+                    <img src>
+                    Tales Told By Dead Friends
+                    <div class="song-submenu">
+                      <div class="song-item" data-url="">Just Say You're Not Into It</div>
+                      <div class="song-item">When I Get Home, You're So Dead</div>
+                      <div class="song-item">One Man Drinking Games</div>
+                      <div class="song-item">Your Song</div>
+                      <div class="song-item">Three Cheers For Five Years</div>
+                      <div class="song-item">The Last Something That Meant Anything</div>
+                      <div class="song-item">The Problem With The Big Picture Is That It's Hard To See</div>
+                    </div>
+                  </div> -->
+                  
+                  <!-- <div class="album-item">A Lesson in Romantics</div>
+                  <div class="album-item">Anywhere But Here</div>
+                  <div class="album-item">Valdosta EP</div>
+                  <div class="album-item">Mayday Parade</div>
+                  <div class="album-item">Monsters in the Closet</div>
+                  <div class="album-item">Black Lines</div>
+                  <div class="album-item">Sunnyland</div>
+                  <div class="album-item">Out of Here</div>
+                  <div class="album-item">What It Means To Fall Apart</div>
+                  <div class="album-item">More Like A Crash</div>
+                  <div class="album-item">Sweet</div> -->
+                </div>
+              </div>
+
+              <!-- Change Background -->
+              <div class="dropdown-item change-background-parent">
+                Change Background
+                <div class="change-background-submenu">
+                  <div class="bg-item" data-bg="assets/laughing_bg.mp4">Who's Laughing Now</div>
+                  <div class="bg-item" data-bg="assets/neversure_bg.mp4">Never Sure</div>
+                  <div class="bg-item" data-bg="assets/stay_bg.mp4">Stay</div>
+                  <div class="bg-item" data-bg="assets/ohwell_bg.mp4">Oh Well, Oh Well</div>
+                  <div class="bg-item" data-bg="assets/bigpicture_bg.mp4">Big Picture</div>
+                </div>
+              </div>
+
+              <!-- Reset -->
+              <div class="dropdown-item" id="reset-option">
+                Reset
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </header>
+
+      <div class="mainframe-body">
+        <div class="main-content">
+
+          <!-- ALBUM COVER -->
+          <div class="main-content-row-1">
+            <div id="artwork">
+              <img id="cover" src="assets/cover_placeholder.png">
+            </div>
+
+            <!-- ---------------- MUSIC CONTROLS ---------------- -->
+            <div class="music-controls">
+              <!-- MUSIC CONTROLS ROW 1 -->
+              <div id="random">
+                <img src="assets/play_random.svg" id="random-default" alt="button">
+                <img src="assets/play_random_hovered.svg" id="random-hover" alt="hover effect">
+              </div>
+              
+              <!-- MUSIC CONTROLS ROW 2 -->
+              <div class="music-controls-row-2">
+                <span id="elapsed">0:00</span>
+                <div class="slider-container">
+                  <input type="range" class=slider id="seek" value="0" min="0" max="1">
+                </div>
+                <span id="duration">0:00</span>
+              </div>
+
+              <!-- MUSIC CONTROLS ROW 3 -->
+              <div class="music-controls-row-3">
+                <div class="previous-next-button disabled" id="previous">
+                  <img src="assets/previous_button.svg" alt="button">
+                </div>
+                <div id="playPauseBtn" class="play-pause-button disabled" data-state="play">
+                  <img src="assets/play_button.svg" class="play-pause-default" alt="button">
+                  <img src="assets/play_button_hovered.svg" class="play-pause-hover" alt="hover effect">
+                </div>
+                <div class="previous-next-button disabled" id="next">
+                  <img src="assets/next_button.svg" alt="button">
+                </div>
+              </div>
+              
+              <!-- MUSIC CONTROLS ROW 4 -->
+              <div class="music-controls-row-4">
+                <div class="volume-icon-container">
+                  <img id="volume-icon" src="assets/volume-1.svg">
+                </div>
+                <div class="slider-container">
+                  <input type="range" class="slider" id="volume" min="0" max="1" step="0.01">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- TITLE AND ALBUM TEXT -->
+          <div class="title-container">
+            <span id="title" class="marquee-text"></span>
+          </div>
+          <div class="album-container">
+            <span id="album"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <audio id="audio" controls hidden></audio>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
