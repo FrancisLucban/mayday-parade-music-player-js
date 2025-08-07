@@ -42,6 +42,11 @@ let lastPlayedIndex = -1;
 let isPlaying = false;
 
 
+window.electronAPI.getSongList().then((songList) => {
+  buildChooseSong();
+});
+
+
 // ====================== ENABLE BUTTONS ======================
 
 function enableButtons() {
@@ -184,7 +189,45 @@ volumeIcon.addEventListener("click", () => {
 
 // ====================== CHOOSE SONG ======================
 
+// function buildChooseSong(songList) {
+//   const submenuContainer = document.getElementById('submenuContainer');
 
+//   const albums = new Map();
+//   for (const song of songList) {
+//     const albumIndex = song.albumIndex;
+
+//     if (!albums.has(albumIndex)) {
+//       albums.set(albumIndex, {
+//         albumName: song.albumName,
+//         albumPath: song.albumPath,
+//         songs: [],
+//       });
+//     }
+//     albums.get(albumIndex).songs.push(song);
+//   }
+
+//   const sortedAlbumIndexes = Array.from(albums.keys()).sort((a, b) => a - b);
+
+//   for (const index of sortedAlbumIndexes) {
+//     const albumData = albums.get(index);
+
+//     const albumDiv = document.createElement('div');
+//     albumDiv.className = 'album-item';
+
+//     const albumTitle = document.createElement('div');
+//     albumTitle.textContent
+
+//   }
+
+
+  // songs.forEach(song => {
+  //   const option = document.createElement('list');
+  //   option.value = song.fullPath;
+  //   option.textContext = `${song.title} (${song.extension})`;
+  //   option.dataset.filename = song.filename;
+  //   select.appendChild(option);
+  // });
+//   }
 
 
 
@@ -273,6 +316,7 @@ function renderRecentlyPlayed() {
     item.textContent = `${song.title} — ${song.album}`;
     item.addEventListener("click", () => {
       loadSong(song); // Play that song when clicked
+      window.electronAPI.setCurrentIndex(song.index);
       enableButtons();
     });
     recentSubmenu.appendChild(item);

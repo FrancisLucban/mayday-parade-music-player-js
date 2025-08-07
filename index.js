@@ -67,6 +67,19 @@ async function buildSongList() {
   }
 }
 
+// ====================== GET SONG LIST ======================
+
+ipcMain.handle('get-song-list', async () => {
+  return songList
+});
+
+
+// ====================== SET CURRENT INDEX ======================
+
+ipcMain.handle('set-current-index', (_, index) => {
+  currentIndex = index;
+});
+
 // ====================== PLAY SOMETHING FUNCTION ======================
 
 ipcMain.handle('get-random-song', () => {
