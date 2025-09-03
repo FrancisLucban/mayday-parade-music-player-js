@@ -24,7 +24,7 @@
 ## 📝 Notes
 
 - As of September 2025, there are 8 albums (ALIR to Sweet) and 4 EPs (Tales to More Like a Crash) in MP's discography
-- Other obscure singles and non-album/non-EP are NOT included in this application (e.g Losing my Mind, Somebody That I Used to Know cover, Thunder, etc.)
+- Other obscure singles and non-album/non-EP songs are NOT included in this application (e.g Losing my Mind, Somebody That I Used to Know cover, Thunder, etc.)
 
 ## ⚠️ Disclaimer
 
