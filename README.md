@@ -1,6 +1,15 @@
 # 🎼 Mayday Parade Music Player (JavaScript) 🟨
 
 <!-- INSERT IMAGE -->
+![Mayday Parade Music Player](screenshots/mp.gif)
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/electron.png" width="60px" alt="electron.js">
+    <img src="https://icon.icepanel.io/Technology/svg/Node.js.svg" width="60px" alt="node.js">
+    <img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/javascript.png" width="60px" alt="js">
+    <img src="https://icon.icepanel.io/Technology/svg/HTML5.svg" width="60px" alt="html">
+    <img src="https://icon.icepanel.io/Technology/svg/CSS3.svg" width="60px" alt="css">
+</p>
 
 ## ✨ Features
 
