@@ -269,7 +269,8 @@ const albumText = [
   "From the EP Out of Here (2020)",
   "From the album What It Means To Fall Apart (2021)",
   "From the EP More Like A Crash (2023)",
-  "From the album Sweet (2025)"
+  "From the album Sweet (2025)",
+  "From the album Sad (2025)"
 ];
 
 async function loadSong(songData) {
