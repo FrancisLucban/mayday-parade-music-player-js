@@ -55,6 +55,18 @@ function enableButtons() {
   previous.classList.remove("disabled");
 }
 
+// ====================== PLAY TO PAUSE ======================
+
+function playToPause() {
+  // Set play/pause button to "pause" state
+  const playPauseBtn = document.getElementById("playPauseBtn");
+  const defaultImg = playPauseBtn.querySelector(".play-pause-default");
+  const hoverImg = playPauseBtn.querySelector(".play-pause-hover");
+  playPauseBtn.dataset.state = "pause";
+  defaultImg.src = "assets/pause_button.svg";
+  hoverImg.src = "assets/pause_button_hovered.svg";
+}
+
 // ====================== RESET (REVERT TO DEFAULT STATE) ======================
 
 reset.addEventListener("click", (e) => {
@@ -243,16 +255,8 @@ random.addEventListener("click", async () => {
   audio.currentTime = 0;
   updateSeekBackground();
 
-  // Set play/pause button to "pause" state
-  const playPauseBtn = document.getElementById("playPauseBtn");
-  const defaultImg = playPauseBtn.querySelector(".play-pause-default");
-  const hoverImg = playPauseBtn.querySelector(".play-pause-hover");
-  playPauseBtn.dataset.state = "pause";
-  defaultImg.src = "assets/pause_button.svg";
-  hoverImg.src = "assets/pause_button_hovered.svg";
-
+  playToPause();
   enableButtons();
-
 });
 
 // ====================== LOADING OF SONG AND DISPLAYING ITS INFO ======================
@@ -319,6 +323,7 @@ function renderRecentlyPlayed() {
       loadSong(song); // Play that song when clicked
       window.electronAPI.setCurrentIndex(song.index);
       enableButtons();
+      playToPause();
     });
     recentSubmenu.appendChild(item);
   });
@@ -360,6 +365,7 @@ previous.addEventListener("click", async () => {
     // Actually go to previous song
     const songData = await window.electronAPI.navigate("previous");
     loadSong(songData);
+    playToPause();
   }
 });
 
@@ -370,6 +376,7 @@ next.addEventListener("click", async () => {
   if (next.classList.contains("disabled")) return;
   const songData = await window.electronAPI.navigate("next");
   loadSong(songData);
+  playToPause();
 });
 
 // ====================== PLAY/PAUSE BUTTON ======================
