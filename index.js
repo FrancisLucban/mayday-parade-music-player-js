@@ -31,9 +31,11 @@ app.whenReady().then(() => {
 
 async function buildSongList() {
   const musicRoot = path.join(__dirname, 'songs');
-  const albums = fs.readdirSync(musicRoot).sort((a, b) =>
-    a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' })
-  );
+  const albums = fs.readdirSync(musicRoot)
+    .filter(item => fs.statSync(path.join(musicRoot, item)).isDirectory())
+    .sort((a, b) =>
+      a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' })
+    );
 
   for (const [index, album] of albums.entries()) {
     const albumPath = path.join(musicRoot, album);
